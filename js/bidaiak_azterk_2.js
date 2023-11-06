@@ -3,11 +3,12 @@ texto="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ac bibendum 
 
 
 const selectElement = document.getElementById('selectContinent');
-
+var option_container = "";
 selectElement.addEventListener('change', function(event) {
 
-  const selectedOption = selectElement.options[selectElement.selectedIndex].value;
-  const option_container = document.querySelector( "#selectTravel" );
+  var selectedOption = selectElement.options[selectElement.selectedIndex].value;
+  var option_container = document.querySelector( "#selectTravel" );
+  
   option_container.innerHTML = "";
   tarjetas.forEach( tarjeta =>{
     
@@ -16,14 +17,38 @@ selectElement.addEventListener('change', function(event) {
 
             var contenido_option = `
             
-            <option>${tarjeta[1]}</option>
+            <option>${ tarjeta[1] }</option>
             
             `;
             option_container.innerHTML += contenido_option;
-        tarjeta.forEach(info => {
-            
-        });
      }
+     
   });
 
 });
+
+var option_container = document.querySelector( "#selectTravel" );
+     option_container.addEventListener( "chance", function(){
+      var selectedOption = selectElement.options[ selectElement.selectedIndex ].value;
+       console.log(selectedOption);
+      if( selectedOption == tarjeta[1] ){
+
+            const option_container = document.querySelector( "#divSeccion" );
+
+            var contenido_option = `
+               <div class="irudia">
+                  <h3>${ tarjeta[1] }</h3>
+                  <img src="${ tarjeta[2] }">
+               </div> 
+               <div class="texto">
+                  <p>
+                     ${ texto }
+                  </p>
+               </div>
+             `;
+            option_container.innerHTML += contenido_option;
+      }
+    
+   })
+
+
