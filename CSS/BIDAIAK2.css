@@ -93,7 +93,8 @@ fieldset{
     border: 2px solid white;
 /*    display: none;*/
 }
-#temporada{text-align: center;
+#temporada{
+  text-align: center;
    margin:10px; 
    padding:20px;
     min-width:180px;
