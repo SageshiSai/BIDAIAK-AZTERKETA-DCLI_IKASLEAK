@@ -3,26 +3,25 @@ const texto="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ac bib
 const meses= ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
 
 
-let p = tarjetas[0]
-
-let [Continente, Ciudad] = p
-
 const selectElement = document.getElementById('selectContinent');
 var option_container = "";
-selectElement.addEventListener('change', function() {
+selectElement.addEventListener('change', () => {
 
   var selectedOption = selectElement.options[selectElement.selectedIndex].value;
   var option_container = document.querySelector( "#selectTravel" );
   
   option_container.innerHTML = "";
   tarjetas.forEach( tarjeta =>{
-    
-     if( selectedOption == tarjeta[ 0 ] ){
+   let p = tarjeta;
+
+   let [Continente, Ciudad] = p
+
+     if( selectedOption == Continente ){
 
       const option_container = document.querySelector( "#selectTravel" );
 
       var option = document.createElement( "option" );
-      option.textContent = tarjeta[ 1 ];
+      option.textContent = Ciudad;
 
       option_container.appendChild( option );
      }
